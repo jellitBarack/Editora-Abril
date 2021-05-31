@@ -23,11 +23,6 @@ public class AssinaturaEnderecoService {
         List<AssinaturaEndereco> assinaturaEnderecoList = repository.getAllByCepAndProductIdAndAddressTypeEntrega(cep, productId, TipoEndereco.ENTREGA);
 
         if(assinaturaEnderecoList.size() > 0) {
-            List<Pessoa> pessoaList = new ArrayList<Pessoa>(0);
-            for (AssinaturaEndereco ae:assinaturaEnderecoList) {
-                //if(!pessoaList.contains(ae.getAssinaturaId().getPessoaId()))
-                    //pessoaList.add(ae.getAssinaturaId().getPessoaId());
-            }
             return assinaturaEnderecoList;
         } else {
             return new ArrayList<AssinaturaEndereco>(0);
