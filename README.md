@@ -32,12 +32,60 @@ Existem várias maneiras de executar esta API Spring Boot em sua máquina local.
 
 Alternativamente, você pode usar o [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) igual a:
 
-```shell
-mvn spring-boot:run
+
+## Sobre o projeto
+# Acessando a Documentação
+```
+http://localhost:8080/swagger-ui.html
 ```
 
-## Contato
 
-Jefferson S Santos - jefferson.s.santospop@gmail.com
+### Exercicio 01
+`User Controller`
+### `[ POST ]` - /user/save
+_Salva uma lista de usuários com nome e senha criptografando a senha do usuário_
+```json
+[
+  {
+    "nome": "Ana",
+    "pass": "112233"
+  }
+]
+```
+_Response body_
+```json
+[
+  {
+    "id": 1,
+    "nome": "João",
+    "pass": "E0BC60C82713F64EF8A57C0C40D02CE24FD0141D5CC3086259C19B1E62A62BEA"
+  }
+]
+```
+### `[ GET ]` - /user
+_Retorna uma lista de usuários pré inserido na base de dados_
+```json
+[
+    { "id": 1, "nome": "Ana" },
+    { "id": 2, "nome": "Bruno" },
+    { "id": 3, "nome": "Leo" },
+    { "id": 4, "nome": "Juca" },
+    { "id": 5, "nome": "Carlos" },
+    { "id": 6, "nome": "Mara" }
+]
+```
+### `[ GET ]` - /user/{nome}/{pass}
+_Encontra um usuário pelo nome e senha_
+![Test Image 1](https://github.com/jellitBarack/Editora-Abril/blob/main/image.png?raw=true)
 
-Link Projeto: [https://github.com/jellitBarack/Editora-Abril](https://github.com/jellitBarack/Editora-Abril)
+_Response body_
+```json
+{
+  "id": 1,
+  "nome": "Ana",
+  "pass": "E0BC60C82713F64EF8A57C0C40D02CE24FD0141D5CC3086259C19B1E62A62BEA"
+}
+```
+
+### Exercicio 02
+`Pessoa Controller`
