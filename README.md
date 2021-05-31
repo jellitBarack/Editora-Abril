@@ -39,6 +39,8 @@ Alternativamente, você pode usar o [Spring Boot Maven plugin](https://docs.spri
 http://localhost:8080/swagger-ui.html
 ```
 
+![Swagger Image](https://github.com/jellitBarack/Editora-Abril/blob/main/swagger_doc.png?raw=true)
+
 
 ### Exercicio 01
 `User Controller`
