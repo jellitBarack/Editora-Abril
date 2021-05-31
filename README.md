@@ -90,9 +90,11 @@ _Response body_
 ```
 
 ### Exercicio 02
-`Resposta 01` - Função foi criada na _Assinatura Endereco Controller_ descrita logo abaixo
-`Resposta 02` - Criação de Indice para CEP, TIPO ENDEREÇO e ID PRODUTO
-`Resposta 03` - Imagem da HQL criada no projeto:
+- `Resposta 01` - Função foi criada na _Assinatura Endereco Controller_ descrita logo abaixo
+
+- `Resposta 02` - Criação de Indice para CEP, TIPO ENDEREÇO e ID PRODUTO
+
+- `Resposta 03` - Imagem da HQL criada no projeto:
 
 ![HQL Image](https://github.com/jellitBarack/Editora-Abril/blob/main/Ex2_hql.png?raw=true)
 
