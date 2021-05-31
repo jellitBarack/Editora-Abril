@@ -16,17 +16,13 @@ public class AssinaturaEndereco {
     @ApiModelProperty(value = "Cod de Endereco de Assinatura", position = 1, notes = "used to display address signature id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumns({
-            @JoinColumn(name="assinatura_id", referencedColumnName="id"),
-            @JoinColumn(name="pessoa_id", referencedColumnName="pessoa_id"),
-    })
+    @Column(name="assinatura_id")
     @ApiModelProperty(value = "Cod da Assinatura", position = 2, notes = "used to display signature id")
-    private Assinatura assinaturaId;
+    private Long assinaturaId;
 
     @Column(name="tipo_endereco")
     @Enumerated(EnumType.STRING)
-    @ApiModelProperty(value = "Tipo de Assinatura", position = 3, notes = "used to display signature type")
+    @ApiModelProperty(value = "Tipo de Assinatura", position = 3,  allowableValues="ENTREGA, COBRANCA", notes = "used to display signature type")
     private TipoEndereco tipoEndereco;
 
     @Column(name="cep")
@@ -35,8 +31,7 @@ public class AssinaturaEndereco {
 
     public AssinaturaEndereco(){}
 
-    public AssinaturaEndereco(Long id, Assinatura assinaturaId, TipoEndereco tipoEndereco, String cep) {
-        this.id = id;
+    public AssinaturaEndereco(Long assinaturaId, TipoEndereco tipoEndereco, String cep) {
         this.assinaturaId = assinaturaId;
         this.tipoEndereco = tipoEndereco;
         this.cep = cep;
@@ -50,11 +45,11 @@ public class AssinaturaEndereco {
         this.id = id;
     }
 
-    public Assinatura getAssinaturaId() {
+    public Long getAssinaturaId() {
         return assinaturaId;
     }
 
-    public void setAssinaturaId(Assinatura assinaturaId) {
+    public void setAssinaturaId(Long assinaturaId) {
         this.assinaturaId = assinaturaId;
     }
 

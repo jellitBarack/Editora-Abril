@@ -1,5 +1,6 @@
 package com.abril.editora.service;
 
+import com.abril.editora.entity.Assinatura;
 import com.abril.editora.entity.Pessoa;
 import com.abril.editora.exception.RecordNotFoundException;
 import com.abril.editora.repository.PessoaRepository;
@@ -23,6 +24,15 @@ public class PessoaService {
             return pessoaList;
         } else {
             return new ArrayList<Pessoa>();
+        }
+    }
+
+    public Pessoa getById(Long id) throws RecordNotFoundException {
+        Optional<Pessoa> entityOpt = repository.findById(id);
+        if(entityOpt.isPresent()){
+            return entityOpt.get();
+        } else {
+            throw new RecordNotFoundException("No user record exist for given id");
         }
     }
 

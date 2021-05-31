@@ -18,7 +18,7 @@ public class Assinatura {
 
     @Column(name="pessoa_id")
     @ApiModelProperty(value = "Cod da Pessoa", position = 2, notes = "used to display people")
-    private Pessoa pessoa;
+    private Long pessoaId;
 
     @Column(name="produto_id")
     @ApiModelProperty(value = "Cod do Produto", position = 3, notes = "used to display product id")
@@ -26,9 +26,8 @@ public class Assinatura {
 
     public Assinatura(){}
 
-    public Assinatura(Long id, Pessoa pessoa, Long produtoId) {
-        this.id = id;
-        this.pessoa = pessoa;
+    public Assinatura(Long pessoaId, Long produtoId) {
+        this.pessoaId = pessoaId;
         this.produtoId = produtoId;
     }
 
@@ -40,12 +39,12 @@ public class Assinatura {
         this.id = id;
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
+    public Long getPessoaId() {
+        return pessoaId;
     }
 
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
+    public void setPessoaId(Long pessoaId) {
+        this.pessoaId = pessoaId;
     }
 
     public Long getProdutoId() {
@@ -61,19 +60,19 @@ public class Assinatura {
         if (this == o) return true;
         if (!(o instanceof Assinatura)) return false;
         Assinatura that = (Assinatura) o;
-        return Objects.equals(id, that.id) && Objects.equals(pessoa, that.pessoa) && Objects.equals(produtoId, that.produtoId);
+        return Objects.equals(id, that.id) && Objects.equals(pessoaId, that.pessoaId) && Objects.equals(produtoId, that.produtoId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, pessoa, produtoId);
+        return Objects.hash(id, pessoaId, produtoId);
     }
 
     @Override
     public String toString() {
         return "Assinatura{" +
                 "id=" + id +
-                ", pessoa=" + pessoa +
+                ", pessoaId=" + pessoaId +
                 ", produtoId=" + produtoId +
                 '}';
     }
